@@ -1,0 +1,32 @@
+<table border="1" style="width:100%">
+  <thead>
+    <th>ID</th>
+    <th>Modelo</th>
+    <th>Marca</th>
+    <th>Precio</th>
+    <th>Puertas</th>
+    <th>Foto</th>
+    <th>Accion</th>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let item of lista">
+      <tr>
+        <!-- contenedor especial de angular, no afecta en estilos -->
+        <!-- <td>{{ item._id }}</td> -->
+        <td>{{ item.id }}</td>
+        <td>{{ item.modelo }}</td>
+        <td>{{ item.marca }}</td>
+        <td>{{ item.precio }}</td>
+        <td>{{ item.cantidadPuertas }}</td>
+        <td>
+          <img [src]="item.RutaDeFoto" class="autoFoto" />
+          <!-- {{ item.RutaDeFoto }} -->
+        </td>
+        <td>
+          <!-- <app-boton-delete (borrar)="RecargarGrilla($event)" [idAuto]="item._id"></app-boton-delete> -->
+          <app-boton-delete (borrar)="RecargarGrilla($event)" [idAuto]="item.id"></app-boton-delete>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

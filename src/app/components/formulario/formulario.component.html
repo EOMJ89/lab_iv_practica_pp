@@ -1,0 +1,84 @@
+<form [formGroup]="profileGroup">
+  <table>
+    <tbody>
+      <tr>
+        <td><label>Modelo</label></td>
+        <td>
+          <input
+            formControlName="modelo"
+            [ngClass]="{
+              invalido:
+                !profileGroup.controls.modelo.valid &&
+                profileGroup.controls.modelo.touched,
+              valido: profileGroup.controls.modelo.valid
+            }"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td><label>Marca</label></td>
+        <td>
+          <input
+            formControlName="marca"
+            [ngClass]="{
+              invalido:
+                !profileGroup.controls.marca.valid &&
+                profileGroup.controls.marca.touched,
+              valido: profileGroup.controls.marca.valid
+            }"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td><label>Precio</label></td>
+        <td>
+          <input
+            type="number"
+            formControlName="precio"
+            [ngClass]="{
+              invalido:
+                !profileGroup.controls.precio.valid &&
+                profileGroup.controls.precio.touched,
+              valido: profileGroup.controls.precio.valid
+            }"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td><label>Puertas</label></td>
+        <td>
+          <input
+            formControlName="cantidadPuertas"
+            [ngClass]="{
+              invalido:
+                !profileGroup.controls.cantidadPuertas.valid &&
+                profileGroup.controls.cantidadPuertas.touched,
+              valido: profileGroup.controls.cantidadPuertas.valid
+            }"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td><label>Foto</label></td>
+        <td>
+          <input
+            formControlName="RutaDeFoto"
+            [ngClass]="{
+              invalido:
+                !profileGroup.controls.RutaDeFoto.valid &&
+                profileGroup.controls.RutaDeFoto.touched,
+              valido: profileGroup.controls.RutaDeFoto.valid
+            }"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <button (click)="Mostrar()" [disabled]="profileGroup.invalid">
+            Subir
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
